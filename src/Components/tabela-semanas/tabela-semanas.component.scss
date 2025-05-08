@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    th {
+      padding: 1.5rem 0rem 1rem 0;
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      //   padding: 0rem 0rem 1rem 0rem;
+
+      th {
+        padding: 0rem 0rem 0.7rem 0rem;
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      td {
+        padding: 0rem 0rem 0rem 0rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
