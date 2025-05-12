@@ -1,7 +1,23 @@
 <div class="modal-overlay" (click)="closeModal()">
   <div class="modal-container" (click)="$event.stopPropagation()">
-    <span>Titulo</span>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-    <button (click)="closeModal()">Fechar</button>
+    <form [formGroup]="form">
+      <!-- <label for="habito">Hábito: </label>
+      <input type="text" id="habito" formControlName="dia" /> -->
+
+      <p>Quais dias você pratica esse hábito?</p>
+
+      @for (option of dias; track option) {
+      <div>
+        <label>
+          <input type="checkbox" [formControlName]="option.id" />
+          {{ option.dia }}
+        </label>
+      </div>
+      }
+
+      <button type="submit">Fechar</button>
+    </form>
+
+    <div>{{ selectedValues }}</div>
   </div>
 </div>
