@@ -1,23 +1,23 @@
 <div class="modal-overlay" (click)="closeModal()">
   <div class="modal-container" (click)="$event.stopPropagation()">
-    <form [formGroup]="form">
-      <!-- <label for="habito">Hábito: </label>
-      <input type="text" id="habito" formControlName="dia" /> -->
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+      <label for="habito">Hábito: </label>
+      <input type="text" id="habito" formControlName="habito" />
 
       <p>Quais dias você pratica esse hábito?</p>
 
-      @for (option of dias; track option) {
-      <div>
-        <label>
-          <input type="checkbox" [formControlName]="option.id" />
-          {{ option.dia }}
-        </label>
+      <div formGroupName="checkForm">
+        @for (option of dias; track option) {
+        <div>
+          <label>
+            <input type="checkbox" [formControlName]="option.id" />
+            {{ option.dia }}
+          </label>
+        </div>
+        }
       </div>
-      }
 
-      <button type="submit">Fechar</button>
+      <button type="submit" [disabled]="!form.valid">Enviar</button>
     </form>
-
-    <div>{{ selectedValues }}</div>
   </div>
 </div>

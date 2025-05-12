@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
-  FormArray,
 } from '@angular/forms';
 import { IDays, arrayDays } from '../../utils/days';
 
@@ -25,21 +24,27 @@ export class ModalComponent {
 
   protected dias: IDays[] = arrayDays;
 
-  protected form = new FormGroup(
-    Object.fromEntries(
-      this.dias.map((option) => [
-        option.id,
-        new FormControl(false, { nonNullable: true }),
-      ])
-    )
-  );
+  protected form = new FormGroup({
+    habito: new FormControl('', [Validators.required]),
 
-  get selectedValues() {
-    return Object.keys(this.form.value).filter((key) => this.form.value[key]);
-  }
+    checkForm: new FormGroup(
+      Object.fromEntries(
+        this.dias.map((option) => [
+          option.id,
+          new FormControl(false, { nonNullable: true }),
+        ])
+      )
+    ),
+  });
 
-  // onFormSubmit() {
-  //   console.log('Habito Form');
-  //   console.log(this.habitForm.value);
+  // get selectedValues() {
+  //   return Object.keys(this.form.controls.checkForm.value).filter(
+  //     (key) => this.form.controls.checkForm.value[key]
+  //   );
   // }
+
+  onFormSubmit() {
+    console.log('Form');
+    console.log(this.form.value);
+  }
 }

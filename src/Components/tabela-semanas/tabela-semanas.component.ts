@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { arrayDays, IDays } from '../../utils/days';
+import { habitos, IHabits } from '../../utils/dumbHabits';
 
 @Component({
   selector: 'app-tabela-semanas',
@@ -9,17 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tabela-semanas.component.scss',
 })
 export class TabelaSemanasComponent {
-  diasSemana = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
-  habitos = [
-    { nome: 'Ler', status: [true, false, true, false, true, false, true] },
-    { nome: 'Correr', status: [false, true, false, true, false, true, false] },
-    {
-      nome: 'Ginástica',
-      status: [true, true, false, false, true, true, false],
-    },
-    {
-      nome: 'Meta de água',
-      status: [false, false, true, true, false, false, true],
-    },
-  ];
+  diasSemana: String[] = arrayDays.map((i) => i.dia);
+  habitos: IHabits[] = habitos;
 }
