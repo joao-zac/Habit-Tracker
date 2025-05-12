@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DashboardComponent } from '../Components/dashboard/dashboard.component';
+import { LoginComponent } from '../Pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DashboardComponent],
+  imports: [
+    RouterOutlet,
+    LoginComponent,
+    ReactiveFormsModule,
+    DashboardComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-
-}
+export class AppComponent {}

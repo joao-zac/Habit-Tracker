@@ -3,8 +3,12 @@
     <h1>Olá, Lucas 😊</h1>
     <h2>Monitore suas atividades e obtenha uma avaliação do seu desempenho!</h2>
 
-    <button>Adicionar hábito</button>
+    <button (click)="openModal()">Adicionar hábito</button>
   </header>
+
+  @if (isModalVisible){
+  <app-modal (close)="hideModal()"></app-modal>
+  }
 
   <main>
     <article>
