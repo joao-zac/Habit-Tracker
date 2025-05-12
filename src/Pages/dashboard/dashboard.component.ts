@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TabelaSemanasComponent } from '../tabela-semanas/tabela-semanas.component';
-import { ModalComponent } from '../modal/modal.component';
+import { TabelaSemanasComponent } from '../../Components/tabela-semanas/tabela-semanas.component';
+import { ModalComponent } from '../../Components/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',

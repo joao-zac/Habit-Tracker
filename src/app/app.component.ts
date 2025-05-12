@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DashboardComponent } from '../Components/dashboard/dashboard.component';
+import { DashboardComponent } from '../Pages/dashboard/dashboard.component';
 import { LoginComponent } from '../Pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
