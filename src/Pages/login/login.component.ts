@@ -18,16 +18,10 @@ export class LoginComponent {
     console.log('profile form');
     console.log(this.profileForm.value);
   }
-  loggarForm() {
-    console.log(this.profileForm.value);
-  }
+
   profileForm = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
-    senha: new FormControl(''),
+    senha: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
-
-  constructor() {
-    console.log(this.profileForm);
-  }
 }
