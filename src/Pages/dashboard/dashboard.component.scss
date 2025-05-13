@@ -16,7 +16,7 @@ header {
   }
 
   button {
-    @include botao-estilo(#3498db, #fff);
+    @include botao-estilo(#3498db, #fff, 15rem);
   }
 }
 

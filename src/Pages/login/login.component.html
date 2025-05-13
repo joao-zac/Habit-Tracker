@@ -1,14 +1,61 @@
-<form [formGroup]="profileForm" (ngSubmit)="onFormSubmit()">
-  <label for="nome">Nome: </label>
-  <input type="text" id="nome" formControlName="nome" />
+<div class="login-page">
+  <section>
+    <img
+      src="../../assets/group-people-illustration-pack.png"
+      alt="Grupo de pessoas"
+    />
+  </section>
 
-  <label for="email">Email: </label>
-  <input type="text" id="email" formControlName="email" />
+  <form [formGroup]="profileForm" (ngSubmit)="onFormSubmit()">
+    <h1>Bem-vindo ao Habit Tracker</h1>
+    <h2>Por favor, registra-se para continuar</h2>
 
-  <label for="senha">Senha: </label>
-  <input type="text" id="senha" formControlName="senha" />
+    <label for="nome">Nome: </label>
+    <input
+      type="text"
+      id="nome"
+      formControlName="nome"
+      placeholder="Digite o seu nome :)"
+    />
 
-  <button type="submit" [disabled]="!profileForm.valid">Entrar</button>
+    @if (profileForm.controls.nome.invalid && (profileForm.controls.nome.dirty
+    || profileForm.controls.nome.touched)) {
+    <div class="alert">Nome é obrigatório</div>
+    }
 
-  <p>O formulario esta {{ profileForm.valid }}</p>
-</form>
+    <label for="email">Email: </label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="example@email.com"
+    />
+
+    @if (profileForm.controls.email.errors && (profileForm.controls.email.dirty
+    || profileForm.controls.email.touched)) {
+    <div class="alert">Email é obrigatório</div>
+    }
+
+    <label for="senha">Senha: </label>
+    <input
+      type="password"
+      id="senha"
+      formControlName="senha"
+      placeholder="Digite aqui a sua senha"
+    />
+
+    @if (profileForm.controls.senha.errors && (profileForm.controls.senha.dirty
+    || profileForm.controls.senha.touched)) {
+    <div>
+      @if (profileForm.controls.senha.invalid) {
+      <div class="alert">A senha deve ter no mínimo 8 caracteres</div>
+      } @if (profileForm.controls.senha.hasError("required")) {
+      <div class="alert">Senha é obrigatório</div>
+      }
+    </div>
+
+    }
+
+    <button type="submit" [disabled]="!profileForm.valid">Entrar</button>
+  </form>
+</div>
