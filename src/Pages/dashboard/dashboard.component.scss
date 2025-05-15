@@ -1,5 +1,21 @@
 @import "../../styles.scss";
 
+.dash-group {
+  display: flex;
+  height: 100%;
+}
+
+.info-group {
+  width: 70%;
+  height: 100%;
+}
+
+.check-group {
+  // padding-top: 5%;
+  // padding-left: 5%;
+  width: 30%;
+}
+
 header {
   text-align: end;
 

@@ -1,22 +1,30 @@
 <div class="dash-group">
-  <header>
-    <h1>Olá, Lucas 😊</h1>
-    <h2>Monitore suas atividades e obtenha uma avaliação do seu desempenho!</h2>
 
-    <button (click)="openModal()">Adicionar hábito</button>
-  </header>
+  <div class="info-group">
+    <header>
+      <h1>Olá, Lucas 😊</h1>
+      <h2>Monitore suas atividades e obtenha uma avaliação do seu desempenho!</h2>
 
-  @if (isModalVisible){
-  <app-modal (close)="hideModal()"></app-modal>
-  }
+      <button (click)="openModal()">Adicionar hábito</button>
+    </header>
 
-  <main>
-    <article>
-      <span>Qua, 30/04 - Ter, 06/05</span>
-      <div class="progress-bar"><div class="progress"></div></div>
-      <p>40% meta atingida</p>
-    </article>
+    @if (isModalVisible){
+    <app-modal (close)="hideModal()"></app-modal>
+    }
 
-    <app-tabela-semanas />
-  </main>
+    <main>
+      <article>
+        <span>Qua, 30/04 - Ter, 06/05</span>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <p>40% meta atingida</p>
+      </article>
+
+      <app-tabela-semanas />
+    </main>
+  </div>
+  
+
+  <div class="check-group">
+    <app-habits-colunm />
+  </div>
 </div>
