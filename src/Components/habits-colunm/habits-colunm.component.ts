@@ -21,7 +21,6 @@ export class HabitsColunmComponent {
 
   removeItem(hab: IHabits) {
     console.log('removedo');
-    // this.habitos = this.habitActionsService.remove(this.habitos, hab);
     this.habitActionsService.remove(hab);
     console.log(this.habitActionsService.haaab);
   }

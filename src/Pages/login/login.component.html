@@ -2,14 +2,6 @@
   <h1>Bem-vindo de volta</h1>
   <h2>Faça o login para entrar no site</h2>
 
-  <!-- <label for="nome">Nome: </label>
-  <input
-    type="text"
-    id="nome"
-    formControlName="nome"
-    placeholder="Digite o seu nome :)"
-  /> -->
-
   @if (profileForm.controls.nome.invalid && (profileForm.controls.nome.dirty ||
   profileForm.controls.nome.touched)) {
   <div class="alert">Nome é obrigatório</div>
