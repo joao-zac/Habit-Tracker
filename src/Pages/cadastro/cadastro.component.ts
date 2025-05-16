@@ -1,20 +1,20 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
-  FormGroup,
   FormControl,
-  Validators,
+  FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-cadastro',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  templateUrl: './cadastro.component.html',
+  styleUrl: './cadastro.component.scss',
 })
-export class LoginComponent {
+export class CadastroComponent {
   @Output() trocarTela = new EventEmitter<void>();
 
   constructor(private router: Router) {}

@@ -1,7 +1,7 @@
 export interface IHabits {
   nome: string;
-  // status: [boolean, boolean, boolean, boolean, boolean, boolean, boolean];
-  status: boolean[]|[]
+  status: boolean[];
+  // status: boolean[]|[]
 }
 
 export const habitos: IHabits[] = [

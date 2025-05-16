@@ -1,15 +1,28 @@
 import { Component } from '@angular/core';
-import { habitos, IHabits } from "../../utils/dumbHabits"
+import { IHabits } from '../../mocks/dumbHabits';
 import { CommonModule } from '@angular/common';
+
+import { HabitActionsService } from '../../services/habit-actions.service';
 
 @Component({
   selector: 'app-habits-colunm',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './habits-colunm.component.html',
-  styleUrl: './habits-colunm.component.scss'
+  styleUrl: './habits-colunm.component.scss',
 })
 export class HabitsColunmComponent {
-  habitos: IHabits[] = habitos;
+  constructor(public habitActionsService: HabitActionsService) {}
+  habitos: IHabits[] = [];
 
+  ngOnInit() {
+    this.habitos = this.habitActionsService.haaab;
+  }
+
+  removeItem(hab: IHabits) {
+    console.log('removedo');
+    // this.habitos = this.habitActionsService.remove(this.habitos, hab);
+    this.habitActionsService.remove(hab);
+    console.log(this.habitActionsService.haaab);
+  }
 }

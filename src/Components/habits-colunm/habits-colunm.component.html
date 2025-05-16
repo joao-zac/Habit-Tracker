@@ -1,6 +1,6 @@
 <div *ngFor="let habito of habitos" class="colunm-tasks">
-    <div class="task">
-        <span>{{habito.nome}}</span>
-    <button>Feito</button>
-    </div>
+  <div class="task">
+    <span>{{ habito.nome }}</span>
+    <button (click)="removeItem(habito)">Feito</button>
+  </div>
 </div>
