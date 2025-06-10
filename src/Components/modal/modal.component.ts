@@ -19,7 +19,6 @@ import { IHabits } from '../../mocks/dumbHabits';
 })
 export class ModalComponent {
   @Output() close = new EventEmitter<void>();
-  constructor(public habitActionsService: HabitActionsService) {}
 
   closeModal(): void {
     this.close.emit();
@@ -41,14 +40,7 @@ export class ModalComponent {
   });
 
   onFormSubmit() {
-    const formValue = this.form.value;
-    if (formValue.nome && typeof formValue.nome === 'string') {
-      this.habitActionsService.add({
-        nome: formValue.nome,
-        status: this.dias.map(
-          (day) => (formValue.status as { [x: string]: boolean })[day.id]
-        ),
-      });
-    }
+    console.log('Form');
+    console.log(this.form.value);
   }
 }
